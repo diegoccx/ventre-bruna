@@ -5,7 +5,7 @@
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title> Dança do ventre -Professora  Bruna Trevisan</title>
+  <title> Dança do ventre -Professora  Bruna Trevisan.</title>
 
   <!-- Bootstrap CSS -->
   <link href="css/animate.css" rel="stylesheet">
@@ -16,6 +16,12 @@
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css">
 </head>
 <body>
+
+<audio controls id="meuAudio">
+  <source src="ventre.mp3" type="audio/mpeg">
+  Seu navegador não suporta a reprodução de áudio.
+</audio>
+
 <div class="container-fluid pl-0 pr-0 bg-img clearfix parallax-window2" data-parallax="scroll" data-image-src="images/ventre1.gif">
   <nav class="navbar navbar-expand-md navbar-dark">
     <div class="container"> 
@@ -235,6 +241,28 @@
 <script src="js/parallax.js"></script>
 <script src="js/wow.js"></script>
 <script src="js/main.js"></script>
-
+<script>
+  // Selecionar o elemento de áudio
+  var audioElement = document.getElementById('meuAudio');
+  
+  // Função para reproduzir o áudio
+  function playAudio() {
+    audioElement.play();
+  }
+  
+  // Detectar quando o usuário rolar a página
+  window.addEventListener('scroll', function() {
+    // Verificar se a música ainda não foi iniciada e se o usuário rolou um pouco para baixo
+    if (!audioElement.paused || window.scrollY < 100) {
+      return; // Não fazer nada se a música já estiver tocando ou o scroll for pequeno
+    }
+    
+    // Iniciar a reprodução do áudio quando o usuário rolar a página
+    playAudio();
+    
+    // Remover o ouvinte do evento para não iniciar a música repetidamente
+    window.removeEventListener('scroll', arguments.callee);
+  });
+</script>
 </body>
 </html>
