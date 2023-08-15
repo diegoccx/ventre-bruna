@@ -41,6 +41,43 @@ a, a:hover {
   color: #ff8013;
 }
 
+
+/* Estilo básico do botão */
+.neon-button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #00ff00; /* Verde */
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  text-decoration: none;
+}
+
+/* Efeito neon */
+.neon-button {
+  background-image: linear-gradient(45deg, #00ff00, #00ffff);
+  box-shadow: 0 0 10px #00ff00,
+              0 0 20px #00ff00,
+              0 0 30px #00ff00,
+              0 0 40px #00ff00;
+  animation: neon-glow 1s ease-in-out infinite alternate;
+}
+
+/* Animação do efeito neon */
+@keyframes neon-glow {
+  from {
+    text-shadow: 0 0 10px #00ff00,
+                 0 0 20px #00ff00,
+                 0 0 30px #00ff00,
+                 0 0 40px #00ff00;
+  }
+  to {
+    text-shadow: none;
+  }
+}
+
+
 .fh5co-banner-text-box {
   position: relative;
   max-height: 120px;
